@@ -8,6 +8,13 @@ public static class SeedData
     public static void EnsureSeeded(AppDbContext db)
     {
         db.Database.EnsureCreated();
+        // Очищаем все таблицы, чтобы избежать конфликтов
+        db.Payments.RemoveRange(db.Payments);
+        db.ClientLabels.RemoveRange(db.ClientLabels);
+        db.Clients.RemoveRange(db.Clients);
+        db.Rates.RemoveRange(db.Rates);
+        db.Users.RemoveRange(db.Users);
+        db.SaveChanges();
         if (!db.Users.Any())
         {
             db.Users.Add(new User { Email = "admin@mirra.dev", PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123") });
