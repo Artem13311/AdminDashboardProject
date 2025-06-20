@@ -28,13 +28,14 @@ public static class SeedData
             };
             db.Clients.AddRange(clients);
             db.SaveChanges();
+            var dbClients = db.Clients.OrderBy(c => c.Id).ToList();
             db.Payments.AddRange(new[]
             {
-                new Payment { ClientId = clients[0].Id, Amount = 10, Date = DateTime.UtcNow.AddDays(-1) },
-                new Payment { ClientId = clients[1].Id, Amount = 20, Date = DateTime.UtcNow.AddDays(-2) },
-                new Payment { ClientId = clients[2].Id, Amount = 30, Date = DateTime.UtcNow.AddDays(-3) },
-                new Payment { ClientId = clients[0].Id, Amount = 40, Date = DateTime.UtcNow.AddDays(-4) },
-                new Payment { ClientId = clients[1].Id, Amount = 50, Date = DateTime.UtcNow.AddDays(-5) },
+                new Payment { ClientId = dbClients[0].Id, Amount = 10, Date = DateTime.UtcNow.AddDays(-1) },
+                new Payment { ClientId = dbClients[1].Id, Amount = 20, Date = DateTime.UtcNow.AddDays(-2) },
+                new Payment { ClientId = dbClients[2].Id, Amount = 30, Date = DateTime.UtcNow.AddDays(-3) },
+                new Payment { ClientId = dbClients[0].Id, Amount = 40, Date = DateTime.UtcNow.AddDays(-4) },
+                new Payment { ClientId = dbClients[1].Id, Amount = 50, Date = DateTime.UtcNow.AddDays(-5) },
             });
             db.SaveChanges();
         }
