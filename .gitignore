@@ -1,4 +1,3 @@
-# .NET
 bin/
 obj/
 *.user
@@ -11,27 +10,16 @@ TestResults/
 *.localhistory/
 *.vscode/
 *.DS_Store
-
-# Rider
 .idea/
 *.sln.iml
-
-# npm/Vite/React
 client/node_modules/
 client/dist/
 client/.env*
-
-# Logs
 *.log
-
-# OS
 Thumbs.db
 .DS_Store
-
-# Others
 *.swp
 *.bak
 *.tmp
 
-# Не добавляю appsettings.json — он будет отслеживаться!
 
