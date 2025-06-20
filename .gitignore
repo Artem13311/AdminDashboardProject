@@ -1,0 +1,37 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+TestResults/
+*.ncrunch*
+*.localhistory/
+*.vscode/
+*.DS_Store
+
+# Rider
+.idea/
+*.sln.iml
+
+# npm/Vite/React
+client/node_modules/
+client/dist/
+client/.env*
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Others
+*.swp
+*.bak
+*.tmp
+
+# Не добавляю appsettings.json — он будет отслеживаться!
+
