@@ -20,4 +20,4 @@ jobs:
       - name: Build
         run: dotnet build AdminDashboard.Api.sln --no-restore --configuration Release
       - name: Test
-        run: dotnet test AdminDashboard.Api.Tests/AdminDashboard.Api.Tests.csproj --no-build --logger "console;verbosity=detailed" 
+        run: dotnet test AdminDashboard.Api.Tests/AdminDashboard.Api.Tests.csproj --logger "console;verbosity=detailed" 
